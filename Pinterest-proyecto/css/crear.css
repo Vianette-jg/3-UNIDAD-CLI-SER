@@ -1,0 +1,64 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff8f0;
+  margin: 0;
+  padding: 20px;
+}
+
+.contenedor-crear {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+  color: #e60023;
+  margin-bottom: 30px;
+}
+
+.opciones-crear {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.opcion {
+  background-color: #fbe2e8;
+  padding: 20px;
+  border-radius: 12px;
+  width: 200px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.opcion h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.opcion button {
+  background-color: #e60023;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.opcion button:hover {
+  background-color: #c9001f;
+}
+
+.oculto {
+  display: none;
+}
+
+#mensaje-creado {
+  margin-top: 25px;
+  font-weight: bold;
+  color: green;
+}

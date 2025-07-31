@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Perfil</title>
+  <link rel="stylesheet" href="../css/cuenta.css">
+</head>
+<body>
+
+  <div class="perfil-container">
+    <h2>Configuración de la cuenta</h2>
+
+    <div class="perfil-opciones">
+
+      <div class="perfil-section">
+        <h3>Editar perfil</h3>
+        <form id="form-editar">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" placeholder="Tu nombre">
+
+          <label for="correo">Correo:</label>
+          <input type="email" id="correo" placeholder="">
+
+          <button type="submit">Guardar cambios</button>
+        </form>
+      </div>
+
+      <div class="perfil-section">
+        <h3>Compartir perfil</h3>
+        <p>Enlace de tu perfil:</p>
+        <div class="share-container">
+          <input type="text" id="enlace" value="https://miapp.com/usuario123" readonly>
+          <button onclick="copiarEnlace()">Copiar</button>
+        </div>
+        <p id="mensaje-copiado" class="oculto">Enlace copiado</p>
+      </div>
+
+      <div class="perfil-section cerrar">
+        <h3>Cerrar sesión</h3>
+        <button onclick="cerrarSesion()">Cerrar sesión</button>
+      </div>
+
+    </div>
+  </div>
+
+ <script>
+  
+  function copiarEnlace() {
+    const enlace = document.getElementById('enlace');
+    enlace.select();
+    document.execCommand('copy');
+    document.getElementById('mensaje-copiado').classList.remove('oculto');
+    setTimeout(() => {
+      document.getElementById('mensaje-copiado').classList.add('oculto');
+    }, 2000);
+  }
+
+ 
+  function cerrarSesion() {
+    const confirmar = confirm("¿Seguro que deseas cerrar tu cuenta?");
+    if (confirmar) {
+      alert("Tu cuenta ha sido cerrada.");
+      window.location.href = "index.html"; // Aquí va la página de inicio de sesión o bienvenida
+    }
+  }
+
+  
+  document.getElementById('form-editar').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Cambios guardados correctamente.');
+    window.location.href = "index.html"; // Redirige a la página principal
+  });
+</script>
+
+</body>
+</html>

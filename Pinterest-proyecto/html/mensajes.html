@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mensajes</title>
+  <link rel="stylesheet" href="../css/mensajes.css">
+</head>
+<body>
+
+  <div class="mensajes-container">
+    <h2>Mensajes</h2>
+
+    <div class="acciones">
+      <button onclick="mostrarInvitacion()">Invitar amigos</button>
+    </div>
+
+    <div id="formulario-invitacion" class="formulario oculto">
+      <h3>Invita a un amigo</h3>
+      <input type="email" placeholder="Correo del amigo" id="correo-invitacion">
+      <button onclick="enviarInvitacion()">Enviar invitación</button>
+      <p id="mensaje-enviado" class="oculto"> Invitación enviada</p>
+    </div>
+
+    <div class="lista-mensajes">
+      <div class="mensaje">
+        <h4>María López</h4>
+        <p>¡Hola! ¿Viste los nuevos pines que subí?</p>
+      </div>
+      <div class="mensaje">
+        <h4>Carlos Torres</h4>
+        <p>¿Me ayudas a organizar mi tablero?</p>
+      </div>
+      <div class="mensaje">
+        <h4>Diseño Creativo</h4>
+        <p>¡Nuevo tablero colaborativo disponible!</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  function mostrarInvitacion() {
+    const form = document.getElementById('formulario-invitacion');
+    form.classList.toggle('oculto');
+    document.getElementById('mensaje-enviado').classList.add('oculto');
+  }
+
+  function enviarInvitacion() {
+    const correo = document.getElementById('correo-invitacion').value;
+    if (correo.trim() === "") {
+      alert("Ingresa un correo válido");
+      return;
+    }
+
+    document.getElementById('mensaje-enviado').classList.remove('oculto');
+    document.getElementById('correo-invitacion').value = "";
+
+   
+    setTimeout(() => {
+      alert("Invitación enviada con éxito. Redirigiendo a inicio...");
+      window.location.href = "index.html";
+    }, 2000);
+  }
+</script>
+
+
+</body>
+</html>

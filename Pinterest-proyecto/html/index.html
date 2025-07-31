@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi App Tipo Pinterest</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+
+  <div class="sidebar">
+    <!-- Botón de Inicio sin enlace porque ya estamos en esta sección -->
+    <button title="Inicio">
+      <img src="../img/inicio.webp" alt="Inicio">
+    </button>
+
+    <a href="mensajes.html" title="Mensajes">
+      <button>
+        <img src="../img/mensaje.png" alt="Mensajes">
+      </button>
+    </a>
+
+    <a href="crear.html" title="Crear">
+      <button>
+        <img src="../img/crear.webp" alt="Crear">
+      </button>
+    </a>
+
+    <a href="cuenta.html" title="Cuenta">
+      <button>
+        <img src="../img/cuenta.png" alt="Cuenta">
+      </button>
+    </a>
+
+    <a href="ajustes.html" title="Ajustes">
+      <button>
+        <img src="../img/ajustes.png" alt="Ajustes">
+      </button>
+    </a>
+  </div>
+
+  <div class="content">
+    <div class="search-container">
+      <img src="../img/buscar.webp" alt="Buscar" class="search-icon">
+      <input type="text" class="search-bar" placeholder="Buscar ideas">
+    </div>
+
+    <div class="tabs">
+      <div class="tab active" onclick="mostrarTodas()">Todas</div>
+    </div>
+
+    <div class="gallery" id="galeria">
+      <!-- Ejemplos de fotos subidas -->
+      <div class="card">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.kd7gsyBY2oLwSlCIB6AR2gHaHa?pid=Api&P=0&h=180" alt="adidas superstar">
+        <p>Adidas superstar</p>
+      </div>
+      <div class="card">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.HqMWjtKJd1CbO3qz5k3nzgHaHa?pid=Api&P=0&h=180" alt="Right arm">
+        <p>Tatuaje de AC/DC</p>
+      </div>
+      <div class="card">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.mUmH2lZO5EhEFkATZdMNdgHaHa?pid=Api&P=0&h=180" alt="Ear piercing">
+        <p>Corte de cabello en mariposa</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function mostrarTodas() {
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      document.querySelector('.tabs .tab:nth-child(1)').classList.add('active');
+      document.getElementById('galeria').innerHTML = `
+        <div class="card">
+          <img src="foto1.png" alt="adidas superstar">
+          <p>adidas superstar</p>
+        </div>
+        <div class="card">
+          <img src="foto2.png" alt="Right arm">
+          <p>Right arm</p>
+        </div>
+        <div class="card">
+          <img src="foto3.png" alt="Ear piercing">
+          <p>Ear piercing</p>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear</title>
+  <link rel="stylesheet" href="../css/crear.css">
+</head>
+<body>
+
+  <div class="contenedor-crear">
+    <h1>Crear contenido</h1>
+
+    <div class="opciones-crear">
+      <div class="opcion">
+        <h2>Crear Pin</h2>
+        <button onclick="crear('Pin')">Crear</button>
+      </div>
+
+      <div class="opcion">
+        <h2>Crear Collage</h2>
+        <button onclick="crear('Collage')">Crear</button>
+      </div>
+
+      <div class="opcion">
+        <h2>Crear Tablero</h2>
+        <button onclick="crear('Tablero')">Crear</button>
+      </div>
+    </div>
+    
+    <p id="mensaje-creado" class="oculto">Contenido creado correctamente.</p>
+  </div>
+
+  <script>
+    function crear(tipo) {
+      alert(`${tipo} creado con éxito.`);
+      document.getElementById("mensaje-creado").classList.remove("oculto");
+
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 2000);
+    }
+  </script>
+  
+</body>
+</html>
